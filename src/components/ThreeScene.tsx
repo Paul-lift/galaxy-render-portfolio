@@ -61,11 +61,15 @@ function ShaderPlanet({
   const meshRef = useRef<THREE.Mesh>(null);
   const materialRef = useRef<THREE.ShaderMaterial>(null);
   const orbitRef = useRef<THREE.Group>(null);
+  
+  // Random initial angle & speed (nur einmal beim Mount berechnet)
+  const randomAngleOffset = useRef(Math.random() * Math.PI * 2);
+  const randomSpeedMultiplier = useRef(0.5 + Math.random() * 1.5);
 
   useFrame((state) => {
-    // Orbital rotation um die Sonne
+    // Orbital rotation um die Sonne mit random Start-Winkel und random Geschwindigkeit
     if (orbitRef.current && orbitRadius > 0) {
-      const angle = state.clock.elapsedTime * orbitSpeed;
+      const angle = state.clock.elapsedTime * orbitSpeed * randomSpeedMultiplier.current + randomAngleOffset.current;
       orbitRef.current.position.x = Math.cos(angle) * orbitRadius;
       orbitRef.current.position.z = Math.sin(angle) * orbitRadius;
     }
