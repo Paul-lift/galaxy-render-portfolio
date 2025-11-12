@@ -4,7 +4,6 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import SkillsSection from '@/components/SkillsSection';
-import ContactSection from '@/components/ContactSection';
 import content from '@/data/content.json';
 
 const ThreeScene = lazy(() => import('@/components/ThreeScene'));
@@ -25,7 +24,6 @@ const Index = () => {
         <AboutSection />
         <ProjectsSection />
         <SkillsSection />
-        <ContactSection />
       </main>
 
       <footer className="border-t border-border py-8">

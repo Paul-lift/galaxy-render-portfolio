@@ -4,8 +4,7 @@
     "name": "Paul",
     "tagline": "A Swiss developer passionate about 3D graphics, shader programming, and building cosmic digital experiences that push creative boundaries.",
     "cta": {
-      "primary": "View My Work",
-      "secondary": "Get In Touch"
+      "primary": "View My Work"
     },
     "social": {
       "github": "https://github.com",
@@ -145,22 +144,6 @@
         ]
       }
     ]
-  },
-  "contact": {
-    "title": "Get In Touch",
-    "description": "Have a project in mind or just want to say hi? I'd love to hear from you!",
-    "form": {
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "namePlaceholder": "Your name",
-      "emailPlaceholder": "your.email@example.com",
-      "messagePlaceholder": "Tell me about your project...",
-      "submit": "Send Message",
-      "submitting": "Sending..."
-    },
-    "directContact": "Or reach me directly at",
-    "directEmail": "paul@example.com"
   },
   "footer": {
     "copyright": "© 2025 Paul. Built with",

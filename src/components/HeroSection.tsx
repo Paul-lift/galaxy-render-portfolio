@@ -63,14 +63,6 @@ export default function HeroSection() {
             >
               {hero.cta.primary}
             </Button>
-            <Button
-              onClick={() => scrollToSection('#contact')}
-              size="lg"
-              variant="outline"
-              className="font-medium"
-            >
-              {hero.cta.secondary}
-            </Button>
           </motion.div>
 
           <motion.div

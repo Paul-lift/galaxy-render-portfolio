@@ -1,73 +1,160 @@
-# Welcome to your Lovable project
+# Galaxy Render Portfolio
 
-## Project info
+A modern, interactive portfolio website featuring 3D visualizations, smooth animations, and a professional design. Built with React, TypeScript, Three.js, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/ef09eb2b-af6e-416a-8c24-abc9eae043d5
+## 🌟 Features
 
-## How can I edit this code?
+- **Interactive 3D Scene** - Dynamic background with custom shaders (Glow & Quantum Plasma effects)
+- **Smooth Animations** - Scroll-triggered animations with Framer Motion
+- **Responsive Design** - Mobile-first approach with Tailwind CSS
+- **Modern UI Components** - Built with shadcn/ui and Radix UI
+- **Dark Mode Support** - Seamless dark/light theme switching
+- **Dynamic Content** - All content managed in JSON for easy updates
+- **Contact Form** - Integrated contact system with toast notifications
+- **Skills Showcase** - Animated skill progress bars with categories
+- **Project Portfolio** - Grid-based project display with live links
 
-There are several ways of editing your application.
+## 🚀 Quick Start
 
-**Use Lovable**
+### Prerequisites
+- Node.js (v16 or higher)
+- Bun or npm package manager
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ef09eb2b-af6e-416a-8c24-abc9eae043d5) and start prompting.
+### Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+```bash
+# Clone the repository
+git clone <repository-url>
+cd galaxy-render-portfolio
 
-**Use your preferred IDE**
+# Install dependencies
+bun install
+# or
+npm install
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
+bun dev
+# or
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📦 Available Scripts
 
-**Use GitHub Codespaces**
+```bash
+# Development server with hot reload
+bun dev
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Production build
+bun build
 
-## What technologies are used for this project?
+# Development build
+bun build:dev
 
-This project is built with:
+# Preview production build
+bun preview
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Lint code
+bun lint
+```
 
-## How can I deploy this project?
+## 🛠️ Tech Stack
 
-Simply open [Lovable](https://lovable.dev/projects/ef09eb2b-af6e-416a-8c24-abc9eae043d5) and click on Share -> Publish.
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite 5
+- **Styling**: Tailwind CSS 3 + PostCSS
+- **3D Graphics**: Three.js + @react-three/fiber
+- **Animations**: Framer Motion
+- **UI Library**: shadcn/ui + Radix UI
+- **Icons**: Lucide React
+- **Forms**: React Hook Form + Zod
+- **State Management**: TanStack React Query
+- **Email**: EmailJS
+- **Routing**: React Router DOM
 
-## Can I connect a custom domain to my Lovable project?
+## 📁 Project Structure
 
-Yes, you can!
+```
+src/
+├── pages/               # Page components
+│   ├── Index.tsx       # Main portfolio page
+│   └── NotFound.tsx    # 404 page
+├── components/          # Reusable components
+│   ├── Navbar.tsx      # Navigation header
+│   ├── HeroSection.tsx # Introduction section
+│   ├── AboutSection.tsx
+│   ├── ProjectsSection.tsx
+│   ├── SkillsSection.tsx
+│   ├── ContactSection.tsx
+│   ├── ThreeScene.tsx  # 3D background
+│   └── ui/             # shadcn/ui components
+├── data/
+│   └── content.json    # All content (editable)
+├── lib/
+│   ├── utils.ts
+│   └── shaders/        # Custom GLSL shaders
+├── hooks/              # Custom React hooks
+└── App.tsx            # Root component
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🎨 Content Management
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+All website content is managed in `src/data/content.json`:
+
+- Portfolio projects and descriptions
+- About section text and features
+- Skills and proficiency levels
+- Contact information and labels
+
+Simply edit the JSON file to update your portfolio without touching the code!
+
+## 🌈 Customization
+
+### Colors & Styling
+- **Tailwind Config**: `tailwind.config.ts` - Customize theme colors and spacing
+- **CSS Variables**: `src/index.css` - Update theme colors globally
+
+### Components
+- All UI components are from `src/components/ui/` (shadcn/ui)
+- Fully customizable and well-documented
+
+### 3D Scene
+- Custom shaders located in `src/lib/shaders/`
+- Edit `src/components/ThreeScene.tsx` for 3D configuration
+
+## 🚢 Deployment
+
+The app is a static SPA and can be deployed to any hosting service:
+
+### Deploy to Vercel
+```bash
+# Vercel CLI will auto-detect the setup
+vercel
+```
+
+### Deploy to Netlify
+```bash
+# Connect your Git repo to Netlify
+# Auto-deploys on push to main
+```
+
+### Manual Deployment
+```bash
+# Build the app
+bun build
+
+# The `dist/` folder is ready to be deployed
+```
+
+## 📝 License
+
+Feel free to use this project as a template for your own portfolio.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+---
+
+Built with ❤️ and cosmic energy ✨
