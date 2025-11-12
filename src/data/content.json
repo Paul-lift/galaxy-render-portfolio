@@ -1,0 +1,170 @@
+{
+  "hero": {
+    "badge": "CREATIVE SOFTWARE ENGINEER",
+    "name": "Paul",
+    "tagline": "A Swiss developer passionate about 3D graphics, shader programming, and building cosmic digital experiences that push creative boundaries.",
+    "cta": {
+      "primary": "View My Work",
+      "secondary": "Get In Touch"
+    },
+    "social": {
+      "github": "https://github.com",
+      "linkedin": "https://linkedin.com",
+      "email": "mailto:paul@example.com"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a software engineering apprentice based in Switzerland, combining technical skills with creative vision to build unique digital experiences.",
+    "features": [
+      {
+        "icon": "Code2",
+        "title": "Clean Code",
+        "description": "Writing maintainable, scalable code with modern best practices and elegant solutions."
+      },
+      {
+        "icon": "Palette",
+        "title": "Creative Design",
+        "description": "Blending technical expertise with artistic vision to create stunning visual experiences."
+      },
+      {
+        "icon": "Rocket",
+        "title": "Innovation",
+        "description": "Always exploring new technologies and pushing the boundaries of what's possible."
+      }
+    ],
+    "bio": "When I'm not coding, you'll find me experimenting with shader programming, exploring the latest in WebGL and Three.js, or getting lost in the cosmos of creative possibilities that technology offers. My goal is to merge technical precision with artistic expression to create experiences that inspire."
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "description": "A selection of my recent work showcasing creative coding and 3D graphics.",
+    "items": [
+      {
+        "title": "Galaxy Shader Explorer",
+        "description": "Interactive WebGL shader playground for creating and experimenting with procedural galaxy effects in real-time.",
+        "tags": ["Three.js", "GLSL", "React"],
+        "github": "https://github.com",
+        "demo": "https://example.com",
+        "gradient": "from-purple-500/20 to-blue-500/20"
+      },
+      {
+        "title": "Cosmic Portfolio",
+        "description": "This very website - a futuristic portfolio featuring 3D graphics, particle systems, and smooth animations.",
+        "tags": ["React Three Fiber", "Framer Motion", "TypeScript"],
+        "github": "https://github.com",
+        "demo": "https://example.com",
+        "gradient": "from-blue-500/20 to-pink-500/20"
+      },
+      {
+        "title": "Neural Network Visualizer",
+        "description": "Real-time 3D visualization of neural network training processes with interactive controls and data flow animations.",
+        "tags": ["WebGL", "TensorFlow.js", "D3.js"],
+        "github": "https://github.com",
+        "demo": "https://example.com",
+        "gradient": "from-pink-500/20 to-purple-500/20"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "A constantly evolving toolkit of technologies I use to bring ideas to life.",
+    "categories": [
+      {
+        "title": "Frontend",
+        "items": [
+          {
+            "name": "React / Next.js",
+            "level": "Sehr gut",
+            "percentage": 90
+          },
+          {
+            "name": "TypeScript",
+            "level": "Sehr gut",
+            "percentage": 85
+          },
+          {
+            "name": "Tailwind CSS",
+            "level": "Experte",
+            "percentage": 95
+          },
+          {
+            "name": "Framer Motion",
+            "level": "Gut",
+            "percentage": 80
+          }
+        ]
+      },
+      {
+        "title": "3D Graphics",
+        "items": [
+          {
+            "name": "Three.js / R3F",
+            "level": "Sehr gut",
+            "percentage": 85
+          },
+          {
+            "name": "GLSL Shaders",
+            "level": "Gut",
+            "percentage": 75
+          },
+          {
+            "name": "WebGL",
+            "level": "Fortgeschritten",
+            "percentage": 70
+          },
+          {
+            "name": "Blender",
+            "level": "Grundlagen",
+            "percentage": 65
+          }
+        ]
+      },
+      {
+        "title": "Backend & Tools",
+        "items": [
+          {
+            "name": "Node.js",
+            "level": "Gut",
+            "percentage": 80
+          },
+          {
+            "name": "Python",
+            "level": "Gut",
+            "percentage": 75
+          },
+          {
+            "name": "Git",
+            "level": "Sehr gut",
+            "percentage": 90
+          },
+          {
+            "name": "Docker",
+            "level": "Fortgeschritten",
+            "percentage": 70
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Have a project in mind or just want to say hi? I'd love to hear from you!",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "your.email@example.com",
+      "messagePlaceholder": "Tell me about your project...",
+      "submit": "Send Message",
+      "submitting": "Sending..."
+    },
+    "directContact": "Or reach me directly at",
+    "directEmail": "paul@example.com"
+  },
+  "footer": {
+    "copyright": "© 2025 Paul. Built with",
+    "tech": ["React", "Three.js"],
+    "suffix": "& cosmic energy ✨"
+  }
+}

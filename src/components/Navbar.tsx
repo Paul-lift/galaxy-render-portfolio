@@ -33,19 +33,19 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass py-4' : 'py-6'
+        isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-border' : ''
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
+      <div className="container mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
         <a
           href="#home"
           onClick={(e) => {
             e.preventDefault();
             scrollToSection('#home');
           }}
-          className="text-2xl font-mono font-bold gradient-text"
+          className="text-xl font-semibold hover:opacity-80 transition-opacity"
         >
-          PAUL
+          Paul
         </a>
 
         {/* Desktop Navigation */}
@@ -58,10 +58,9 @@ export default function Navbar() {
                 e.preventDefault();
                 scrollToSection(link.href);
               }}
-              className="text-foreground/80 hover:text-foreground transition-colors relative group"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </a>
           ))}
         </div>
@@ -73,14 +72,14 @@ export default function Navbar() {
           className="md:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X /> : <Menu />}
+          {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </Button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass mt-4">
-          <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border">
+          <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -89,7 +88,7 @@ export default function Navbar() {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="text-foreground/80 hover:text-foreground transition-colors py-2"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
               >
                 {link.name}
               </a>

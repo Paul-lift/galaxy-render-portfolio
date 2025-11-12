@@ -6,11 +6,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import content from '@/data/content.json';
 
 export default function ContactSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const { toast } = useToast();
+  const { contact } = content;
   
   const [formData, setFormData] = useState({
     name: '',
@@ -23,7 +25,6 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     setTimeout(() => {
       toast({
         title: "Message sent!",
@@ -39,32 +40,32 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="min-h-screen flex items-center py-20" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-32" ref={ref}>
+      <div className="container mx-auto px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Get In <span className="gradient-text">Touch</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+            {contact.title}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Have a project in mind or just want to say hi? I'd love to hear from you!
+          <p className="text-lg text-muted-foreground">
+            {contact.description}
           </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-2xl mx-auto"
         >
-          <form onSubmit={handleSubmit} className="glass p-8 rounded-lg space-y-6">
+          <form onSubmit={handleSubmit} className="border border-border rounded-lg p-8 bg-card/50 space-y-6">
             <div className="space-y-2">
               <label htmlFor="name" className="text-sm font-medium">
-                Name
+                {contact.form.name}
               </label>
               <Input
                 id="name"
@@ -72,14 +73,14 @@ export default function ContactSection() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="Your name"
-                className="bg-input border-border focus:border-primary"
+                placeholder={contact.form.namePlaceholder}
+                className="bg-background/50 border-border focus:border-primary"
               />
             </div>
 
             <div className="space-y-2">
               <label htmlFor="email" className="text-sm font-medium">
-                Email
+                {contact.form.email}
               </label>
               <Input
                 id="email"
@@ -88,14 +89,14 @@ export default function ContactSection() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="your.email@example.com"
-                className="bg-input border-border focus:border-primary"
+                placeholder={contact.form.emailPlaceholder}
+                className="bg-background/50 border-border focus:border-primary"
               />
             </div>
 
             <div className="space-y-2">
               <label htmlFor="message" className="text-sm font-medium">
-                Message
+                {contact.form.message}
               </label>
               <Textarea
                 id="message"
@@ -103,24 +104,24 @@ export default function ContactSection() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                placeholder="Tell me about your project..."
+                placeholder={contact.form.messagePlaceholder}
                 rows={6}
-                className="bg-input border-border focus:border-primary resize-none"
+                className="bg-background/50 border-border focus:border-primary resize-none"
               />
             </div>
 
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-primary hover:bg-primary/90 glow-primary"
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
               size="lg"
             >
               {isSubmitting ? (
-                'Sending...'
+                contact.form.submitting
               ) : (
                 <>
                   <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                  {contact.form.submit}
                 </>
               )}
             </Button>
@@ -130,10 +131,12 @@ export default function ContactSection() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center mt-12 text-muted-foreground"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-12 text-muted-foreground text-sm"
         >
-          <p>Or reach me directly at <a href="mailto:paul@example.com" className="text-primary hover:underline">paul@example.com</a></p>
+          <p>
+            {contact.directContact} <a href={`mailto:${contact.directEmail}`} className="text-primary hover:underline">{contact.directEmail}</a>
+          </p>
         </motion.div>
       </div>
     </section>

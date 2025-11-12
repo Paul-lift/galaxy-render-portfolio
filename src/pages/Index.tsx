@@ -5,11 +5,13 @@ import AboutSection from '@/components/AboutSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import SkillsSection from '@/components/SkillsSection';
 import ContactSection from '@/components/ContactSection';
+import content from '@/data/content.json';
 
-// Lazy load the Three.js scene for better performance
 const ThreeScene = lazy(() => import('@/components/ThreeScene'));
 
 const Index = () => {
+  const { footer } = content;
+
   return (
     <div className="relative">
       <Suspense fallback={<div className="fixed inset-0 bg-background -z-10" />}>
@@ -26,10 +28,17 @@ const Index = () => {
         <ContactSection />
       </main>
 
-      <footer className="glass py-8 mt-20">
-        <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p className="font-mono">
-            © 2025 Paul. Built with <span className="gradient-text">React</span>, <span className="gradient-text">Three.js</span> & cosmic energy ✨
+      <footer className="border-t border-border py-8">
+        <div className="container mx-auto px-6 lg:px-8 text-center text-muted-foreground text-sm">
+          <p>
+            {footer.copyright}{' '}
+            {footer.tech.map((tech, i) => (
+              <span key={tech}>
+                <span className="gradient-text">{tech}</span>
+                {i < footer.tech.length - 1 && ', '}
+              </span>
+            ))}{' '}
+            {footer.suffix}
           </p>
         </div>
       </footer>
