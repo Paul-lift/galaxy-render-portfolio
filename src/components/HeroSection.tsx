@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import content from '@/data/content.json';
 
@@ -78,20 +78,6 @@ export default function HeroSection() {
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               <Github className="w-5 h-5" />
-            </a>
-            <a
-              href={hero.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href={hero.social.email}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Mail className="w-5 h-5" />
             </a>
           </motion.div>
         </motion.div>

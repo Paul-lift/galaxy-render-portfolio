@@ -1,46 +1,46 @@
 {
   "hero": {
-    "badge": "CREATIVE SOFTWARE ENGINEER",
+    "badge": "KREATIVER SOFTWARE ENGINEER",
     "name": "Paul",
-    "tagline": "A Swiss developer passionate about 3D graphics, shader programming, and building cosmic digital experiences that push creative boundaries.",
+    "tagline": "Ein Schweizer Entwickler, leidenschaftlich über 3D-Grafiken, Shader-Programmierung und dem Schaffen kosmischer digitaler Erfahrungen, die kreative Grenzen sprengen.",
     "cta": {
-      "primary": "View My Work"
+      "primary": "Meine Arbeiten anschauen"
     },
     "social": {
-      "github": "https://github.com",
+      "github": "https://github.com/Paul-lift",
       "linkedin": "https://linkedin.com",
       "email": "mailto:paul@example.com"
     }
   },
   "about": {
-    "title": "About Me",
-    "description": "I'm a software engineering apprentice based in Switzerland, combining technical skills with creative vision to build unique digital experiences.",
+    "title": "Über Mich",
+    "description": "Ich bin ein Software-Engineering-Lehrling basierend in der Schweiz, der technische Fähigkeiten mit kreativer Vision verbindet, um einzigartige digitale Erfahrungen zu schaffen.",
     "features": [
       {
         "icon": "Code2",
-        "title": "Clean Code",
-        "description": "Writing maintainable, scalable code with modern best practices and elegant solutions."
+        "title": "Sauberer Code",
+        "description": "Schreiben von wartbarem, skalierbarem Code mit modernen Best Practices und eleganten Lösungen."
       },
       {
         "icon": "Palette",
-        "title": "Creative Design",
-        "description": "Blending technical expertise with artistic vision to create stunning visual experiences."
+        "title": "Kreatives Design",
+        "description": "Verbindung von technischer Expertise mit künstlerischer Vision, um atemberaubende visuelle Erfahrungen zu schaffen."
       },
       {
         "icon": "Rocket",
         "title": "Innovation",
-        "description": "Always exploring new technologies and pushing the boundaries of what's possible."
+        "description": "Ständige Erkundung neuer Technologien und das Überschreiten von Grenzen der Möglichkeiten."
       }
     ],
-    "bio": "When I'm not coding, you'll find me experimenting with shader programming, exploring the latest in WebGL and Three.js, or getting lost in the cosmos of creative possibilities that technology offers. My goal is to merge technical precision with artistic expression to create experiences that inspire."
+    "bio": "Wenn ich nicht gerade code, experimentiere ich mit Shader-Programmierung, erkunde die neuesten Entwicklungen in WebGL und Three.js oder verliere mich im Kosmos der kreativen Möglichkeiten, die die Technologie bietet. Mein Ziel ist es, technische Präzision mit künstlerischem Ausdruck zu verbinden, um Erfahrungen zu schaffen, die inspirieren."
   },
   "projects": {
-    "title": "Featured Projects",
-    "description": "A selection of my recent work showcasing creative coding and 3D graphics.",
+    "title": "Ausgewählte Projekte",
+    "description": "Eine Auswahl meiner neuesten Arbeiten, die kreatives Programmieren und 3D-Grafiken zeigen.",
     "items": [
       {
         "title": "Galaxy Shader Explorer",
-        "description": "Interactive WebGL shader playground for creating and experimenting with procedural galaxy effects in real-time.",
+        "description": "Interaktiver WebGL-Shader-Spielplatz zum Erstellen und Experimentieren mit prozeduralen Galaxie-Effekten in Echtzeit.",
         "tags": ["Three.js", "GLSL", "React"],
         "github": "https://github.com",
         "demo": "https://example.com",
@@ -48,7 +48,7 @@
       },
       {
         "title": "Cosmic Portfolio",
-        "description": "This very website - a futuristic portfolio featuring 3D graphics, particle systems, and smooth animations.",
+        "description": "Diese Website - ein futuristisches Portfolio mit 3D-Grafiken, Partikelsystemen und sanften Animationen.",
         "tags": ["React Three Fiber", "Framer Motion", "TypeScript"],
         "github": "https://github.com",
         "demo": "https://example.com",
@@ -56,7 +56,7 @@
       },
       {
         "title": "Neural Network Visualizer",
-        "description": "Real-time 3D visualization of neural network training processes with interactive controls and data flow animations.",
+        "description": "Echtzeit-3D-Visualisierung von Trainingsprozessen neuronaler Netzwerke mit interaktiven Steuerelementen und Datenfluss-Animationen.",
         "tags": ["WebGL", "TensorFlow.js", "D3.js"],
         "github": "https://github.com",
         "demo": "https://example.com",
@@ -65,8 +65,8 @@
     ]
   },
   "skills": {
-    "title": "Skills",
-    "description": "A constantly evolving toolkit of technologies I use to bring ideas to life.",
+    "title": "Fähigkeiten",
+    "description": "Ein ständig wachsendes Toolkit von Technologien, die ich nutze, um Ideen umzusetzen.",
     "categories": [
       {
         "title": "Frontend",
@@ -94,7 +94,7 @@
         ]
       },
       {
-        "title": "3D Graphics",
+        "title": "3D-Grafiken",
         "items": [
           {
             "name": "Three.js / R3F",
@@ -102,7 +102,7 @@
             "percentage": 85
           },
           {
-            "name": "GLSL Shaders",
+            "name": "GLSL Shader",
             "level": "Gut",
             "percentage": 75
           },
@@ -146,8 +146,8 @@
     ]
   },
   "footer": {
-    "copyright": "© 2025 Paul. Built with",
+    "copyright": "© 2025 Paul. Gebaut mit",
     "tech": ["React", "Three.js"],
-    "suffix": "& cosmic energy ✨"
+    "suffix": "& kosmischer Energie ✨"
   }
 }
