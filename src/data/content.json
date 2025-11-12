@@ -35,8 +35,8 @@
     "bio": "Wenn ich nicht gerade code, experimentiere ich mit Shader-Programmierung, erkunde die neuesten Entwicklungen in WebGL und Three.js oder verliere mich im Kosmos der kreativen Möglichkeiten, die die Technologie bietet. Mein Ziel ist es, technische Präzision mit künstlerischem Ausdruck zu verbinden, um Erfahrungen zu schaffen, die inspirieren."
   },
   "projects": {
-    "title": "Ausgewählte Projekte",
-    "description": "Eine Auswahl meiner neuesten Arbeiten, die kreatives Programmieren und 3D-Grafiken zeigen.",
+    "title": "Projekte in der Swisscom",
+    "description": "Eine auflistung meiner bisherigen Projekte innerhalb der Swisscom.",
     "items": [
       {
         "title": "Galaxy Shader Explorer",
