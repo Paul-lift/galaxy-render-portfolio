@@ -25,9 +25,18 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
-          branch: gh-pages
-          clean: true
+      - name: Deploy to gh-pages
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git fetch origin gh-pages --depth=1 2>/dev/null || true
+          git checkout --orphan gh-pages-new
+          git rm -rf .
+          cp -r dist/* .
+          echo "paulbot.ch" > CNAME
+          touch .nojekyll
+          git add .
+          git commit -m "Deploy to gh-pages" || true
+          git branch -D gh-pages 2>/dev/null || true
+          git branch -m gh-pages
+          git push -f origin gh-pages
