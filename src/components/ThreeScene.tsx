@@ -53,7 +53,7 @@ export default function ThreeScene() {
           size={30}
           scale={[200, 200, 200]}
           speed={5}
-          count={1000}
+          count={700}
         />
         <Sparkles
           position={[0, 0, 0]}
@@ -61,7 +61,7 @@ export default function ThreeScene() {
           color={"purple"}
           scale={[200, 200, 200]}
           speed={0}
-          count={250}
+          count={200}
         />
         <Sparkles
           position={[0, 0, 0]}
