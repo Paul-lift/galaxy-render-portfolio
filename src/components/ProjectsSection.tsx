@@ -16,6 +16,10 @@ export default function ProjectsSection() {
   const { displayedText: titleText, setShouldStart: setTitleStart } =
     useEncryptingTypewriter(projects.title, 50, 500);
 
+    //description Typewriter
+  const { displayedText: descriptionText, setShouldStart: setDescriptionStart } =
+    useTypewriter(projects.description, 15, 2000);
+
   return (
     <section id="projects" className="py-64" ref={ref}>
       <div className="container mx-auto px-6 lg:px-8">
@@ -26,14 +30,15 @@ export default function ProjectsSection() {
           className="max-w-3xl mx-auto text-center mb-20"
           onAnimationComplete={() => {
             setTitleStart(true);
+            setDescriptionStart(true);
           }}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight min-h-[3em]">
             {titleText}
             <BlinkingCursor></BlinkingCursor>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            {projects.description}
+          <p className="text-lg text-muted-foreground min-h-[2.5em]">
+            {descriptionText}
           </p>
         </motion.div>
 
