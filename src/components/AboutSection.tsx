@@ -22,7 +22,7 @@ export default function AboutSection() {
   const {
     displayedText: descriptionText,
     setShouldStart: setDescriptionStart,
-  } = useTypewriter(about.description, 15, 1500);
+  } = useTypewriter(about.description, 15, 1000);
 
   return (
     <section id="about" className="py-32" ref={ref}>
@@ -34,14 +34,21 @@ export default function AboutSection() {
           className="max-w-3xl mx-auto text-center mb-20"
           onAnimationComplete={() => {
             setTitleStart(true);
-            setDescriptionStart(true)
+            setDescriptionStart(true);
           }}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
             {titleText}
             <BlinkingCursor></BlinkingCursor>
           </h2>
-          <p className="text-lg text-muted-foreground">{descriptionText}</p>
+          <p
+            className="text-lg text-muted-foreground"
+            style={{
+              minHeight: `${(about.description.length / 50) * 1.5}em`,
+            }}
+          >
+            {descriptionText}
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
