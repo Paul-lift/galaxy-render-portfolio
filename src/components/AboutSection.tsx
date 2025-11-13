@@ -6,6 +6,7 @@ import content from "@/data/content.json";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import BlinkingCursor from "./ui/blinkingCursor";
 import { useEncryptingTypewriter } from "@/hooks/useEncryptingTypewriter";
+import FeatureCard from "./FeatureCard";
 
 const iconMap = {
   Code2: Code2,
@@ -31,7 +32,7 @@ export default function AboutSection() {
   const { displayedText: bioText, setShouldStart: setBioStart } = useTypewriter(
     about.bio,
     25,
-    4000
+    5000
   );
 
   return (
@@ -66,23 +67,14 @@ export default function AboutSection() {
           {about.features.map((feature, index) => {
             const Icon = iconMap[feature.icon as keyof typeof iconMap];
             return (
-              <motion.div
+              <FeatureCard
                 key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="border border-border rounded-lg p-8 hover:border-primary/50 transition-all duration-300 bg-card/50"
-              >
-                <div className="flex flex-col items-start space-y-4">
-                  <div className="p-3 rounded-lg bg-primary/10">
-                    <Icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold">{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </motion.div>
+                icon={Icon}
+                title={feature.title}
+                description={feature.description}
+                index={index}
+                isInView={isInView}
+              />
             );
           })}
         </div>
