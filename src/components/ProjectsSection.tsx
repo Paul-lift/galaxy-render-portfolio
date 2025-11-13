@@ -1,26 +1,35 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { ExternalLink, Github } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import content from '@/data/content.json';
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { ExternalLink, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import content from "@/data/content.json";
+import { useTypewriter } from "@/hooks/useTypewriter";
+import BlinkingCursor from "./ui/blinkingCursor";
 
 export default function ProjectsSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-300px" });
   const { projects } = content;
 
+  const { displayedText: titleText, setShouldStart: setTitleStart } =
+    useTypewriter(projects.title, 50, 500);
+
   return (
-    <section id="projects" className="py-32" ref={ref}>
+    <section id="projects" className="py-64" ref={ref}>
       <div className="container mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center mb-20"
+          onAnimationComplete={() => {
+            setTitleStart(true);
+          }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-            {projects.title}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight min-h-[3em]">
+            {titleText}
+            <BlinkingCursor></BlinkingCursor>
           </h2>
           <p className="text-lg text-muted-foreground">
             {projects.description}
@@ -36,14 +45,24 @@ export default function ProjectsSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300 bg-card/50 group"
             >
-              <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
+              <div
+                className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}
+              >
                 <div className="absolute inset-0 bg-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button size="icon" variant="secondary" className="h-9 w-9">
                       <Github className="w-4 h-4" />
                     </Button>
                   </a>
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button size="icon" variant="secondary" className="h-9 w-9">
                       <ExternalLink className="w-4 h-4" />
                     </Button>
