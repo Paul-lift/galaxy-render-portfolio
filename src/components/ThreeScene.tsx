@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Sparkles } from "@react-three/drei";
 import * as THREE from "three";
+import ModelLoader, { preloadModel } from "./ModelLoader";
 
 function StarField() {
   const ref = useRef<THREE.Points>(null);
@@ -38,7 +39,7 @@ export default function ThreeScene() {
   return (
     <div className="fixed inset-0 -z-10">
       <Canvas
-        camera={{ position: [-80, 50, 80], fov: 50, near: 0.1, far: 2000 }}
+        camera={{ position: [0, 0, 150], fov: 60, near: 0.1, far: 2000 }}
         gl={{ alpha: true, antialias: true }}
         onCreated={({ camera }) => {
           camera.lookAt(0, 0, 0);
@@ -70,6 +71,7 @@ export default function ThreeScene() {
           speed={2}
           count={100}
         />
+
       </Canvas>
     </div>
   );
