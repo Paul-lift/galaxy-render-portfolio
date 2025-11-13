@@ -1,26 +1,42 @@
-import { motion } from 'framer-motion';
-import { ArrowDown, Github } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import content from '@/data/content.json';
+import { motion } from "framer-motion";
+import { ArrowDown, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useTypewriter } from "@/hooks/useTypewriter";
+import content from "@/data/content.json";
+import { reverse } from "dns";
+import BlinkingCursor from "./ui/blinkingCursor";
+import { useState } from "react";
 
 export default function HeroSection() {
   const { hero } = content;
+  const [startTypewriter, setStartTypewriter] = useState(false)
+  const { displayedText, setShouldStart } = useTypewriter(
+    `Hi, I'm ${hero.name}`,
+    50,
+    500,
+  );
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative"
+    >
       <div className="container mx-auto px-6 lg:px-8 py-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center space-y-8"
+          onAnimationComplete={() => {
+            setShouldStart(true)
+          }}
         >
           <motion.div
             initial={{ opacity: 0 }}
@@ -38,7 +54,8 @@ export default function HeroSection() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight"
           >
-            Hi, I'm <span className="gradient-text">{hero.name}</span>
+            {displayedText}
+            <BlinkingCursor></BlinkingCursor>
           </motion.h1>
 
           <motion.p
@@ -57,7 +74,7 @@ export default function HeroSection() {
             className="flex flex-wrap items-center justify-center gap-4 pt-4"
           >
             <Button
-              onClick={() => scrollToSection('#projects')}
+              onClick={() => scrollToSection("#projects")}
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
             >
@@ -85,7 +102,12 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8, repeat: Infinity, repeatType: 'reverse' }}
+          transition={{
+            delay: 1.2,
+            duration: 0.8,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2"
         >
           <ArrowDown className="w-5 h-5 text-muted-foreground" />
