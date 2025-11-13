@@ -9,7 +9,7 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Galaxy Theme - Deep Space */
-    --background: 240 20% 4%;
+    --background: 240 11% 4%;
     --foreground: 240 10% 95%;
 
     --card: 240 15% 8%;
