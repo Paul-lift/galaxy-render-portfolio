@@ -1,19 +1,20 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import content from "@/data/content.json";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import BlinkingCursor from "./ui/blinkingCursor";
+import { useEncryptingTypewriter } from "@/hooks/useEncryptingTypewriter";
 
 export default function ProjectsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-300px" });
   const { projects } = content;
-
+  //TITLE
   const { displayedText: titleText, setShouldStart: setTitleStart } =
-    useTypewriter(projects.title, 50, 500);
+    useEncryptingTypewriter(projects.title, 50, 500);
 
   return (
     <section id="projects" className="py-64" ref={ref}>

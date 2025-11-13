@@ -6,12 +6,13 @@ import content from "@/data/content.json";
 import { reverse } from "dns";
 import BlinkingCursor from "./ui/blinkingCursor";
 import { useState } from "react";
+import { useEncryptingTypewriter } from "@/hooks/useEncryptingTypewriter";
 
 export default function HeroSection() {
   const { hero } = content;
   const [startTypewriter, setStartTypewriter] = useState(false);
   // Typewriter for name
-  const { displayedText : nameText, setShouldStart : setNameStart } = useTypewriter(
+  const { displayedText : nameText, setShouldStart : setNameStart } = useEncryptingTypewriter(
     `Hi, I'm ${hero.name}`,
     50,
     100

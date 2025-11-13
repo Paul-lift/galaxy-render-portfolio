@@ -5,6 +5,7 @@ import { Code2, Palette, Rocket } from "lucide-react";
 import content from "@/data/content.json";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import BlinkingCursor from "./ui/blinkingCursor";
+import { useEncryptingTypewriter } from "@/hooks/useEncryptingTypewriter";
 
 const iconMap = {
   Code2: Code2,
@@ -16,21 +17,22 @@ export default function AboutSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { about } = content;
-  //title
-  const { displayedText: titleText,
-    setShouldStart: setTitleStart } =
-    useTypewriter(about.title, 50, 500);
+  //TITLE 
+  const { displayedText: titleText, setShouldStart: setTitleStart } =
+    useEncryptingTypewriter(about.title, 50, 500, 1, "full");
 
-    //description Typewriter
+  //description Typewriter
   const {
     displayedText: descriptionText,
     setShouldStart: setDescriptionStart,
   } = useTypewriter(about.description, 15, 1000);
 
-  const {
-    displayedText: bioText,
-    setShouldStart: setBioStart,
-  } = useTypewriter(about.bio, 25, 3750);
+  //BIO Typewriter
+  const { displayedText: bioText, setShouldStart: setBioStart } = useTypewriter(
+    about.bio,
+    25,
+    4000
+  );
 
   return (
     <section id="about" className="py-32" ref={ref}>
