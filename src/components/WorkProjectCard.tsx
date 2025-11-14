@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useTypewriter } from "@/hooks/useTypewriter";  
+import { useEncryptingTypewriter } from "@/hooks/useEncryptingTypewriter";
 
 interface WorkProjectCardProps {
   title: string;
@@ -17,21 +19,34 @@ export default function WorkProjectCard({
   index = 0,
   isInView = true,
 }: WorkProjectCardProps) {
+    //title Typewriter
+    const { displayedText: titleText, setShouldStart: setTitleStart } =
+      useEncryptingTypewriter(title, 50, 3500, 1, "full");
+
+    //description Typewriter
+    const { displayedText: descriptionText, setShouldStart: setDescriptionStart } =
+      useTypewriter(description, 15, 4000);
+      //tags do not need typewriter effect
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="border border-border rounded-lg overflow-hidden transition-all duration-300 bg-card/50 group"
+      onAnimationComplete={() => {
+        setDescriptionStart(true)
+        setTitleStart(true)
+      }}
     >
       {/* Gradient Image Section */}
       <div className={`h-24 bg-gradient-to-br ${gradient} relative overflow-hidden`} />
 
       {/* Content Section */}
       <div className="p-4 space-y-3">
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-muted-foreground text-sm leading-relaxed">
-          {description}
+        <h3 className="text-xl font-semibold min-h-[2.5em]">{titleText}</h3>
+        <p className="text-muted-foreground text-sm leading-relaxed min-h-[5em]">
+          {descriptionText}
         </p>
 
         {/* Tags */}

@@ -32,7 +32,7 @@ export default function AboutSection() {
   const { displayedText: bioText, setShouldStart: setBioStart } = useTypewriter(
     about.bio,
     25,
-    5000
+    6000
   );
 
   return (
