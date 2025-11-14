@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { useTypewriter } from "@/hooks/useTypewriter";  
 import { useEncryptingTypewriter } from "@/hooks/useEncryptingTypewriter";
 
@@ -19,14 +20,22 @@ export default function WorkProjectCard({
   index = 0,
   isInView = true,
 }: WorkProjectCardProps) {
+    const [descriptionStart, setDescriptionStart] = useState(false);
+
     //title Typewriter
     const { displayedText: titleText, setShouldStart: setTitleStart } =
       useEncryptingTypewriter(title, 50, 3500, 1, "full");
 
     //description Typewriter
-    const { displayedText: descriptionText, setShouldStart: setDescriptionStart } =
+    const { displayedText: descriptionText, setShouldStart: setDescriptionStartTyper } =
       useTypewriter(description, 15, 4000);
-      //tags do not need typewriter effect
+
+    // Wenn die Description anfängt Zeichen zu haben, setze descriptionStart
+    useEffect(() => {
+      if (descriptionText.length > 0 && !descriptionStart) {
+        setDescriptionStart(true);
+      }
+    }, [descriptionText, descriptionStart]);
 
   return (
     <motion.div
@@ -35,8 +44,8 @@ export default function WorkProjectCard({
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="border border-border rounded-lg overflow-hidden transition-all duration-300 bg-card/50 group"
       onAnimationComplete={() => {
-        setDescriptionStart(true)
         setTitleStart(true)
+        setDescriptionStartTyper(true)
       }}
     >
       {/* Gradient Image Section */}
@@ -45,19 +54,24 @@ export default function WorkProjectCard({
       {/* Content Section */}
       <div className="p-4 space-y-3">
         <h3 className="text-xl font-semibold min-h-[2.5em]">{titleText}</h3>
-        <p className="text-muted-foreground text-sm leading-relaxed min-h-[5em]">
+        <p 
+          className="text-muted-foreground text-sm leading-relaxed min-h-[5em]"
+        >
           {descriptionText}
         </p>
 
-        {/* Tags */}
+        {/* Tags mit Spawn-In Effekt */}
         <div className="flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <span
+          {tags.map((tag, tagIndex) => (
+            <motion.span
               key={tag}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={descriptionStart ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.3, delay: tagIndex * 0.1 }}
               className="text-xs px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-primary/20"
             >
               {tag}
-            </span>
+            </motion.span>
           ))}
         </div>
       </div>
