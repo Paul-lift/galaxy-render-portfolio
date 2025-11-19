@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { useTypewriter } from "@/hooks/useTypewriter";  
+import { useTypewriter } from "@/hooks/useTypewriter";
 import { useEncryptingTypewriter } from "@/hooks/useEncryptingTypewriter";
 
 interface WorkProjectCardProps {
@@ -20,22 +20,24 @@ export default function WorkProjectCard({
   index = 0,
   isInView = true,
 }: WorkProjectCardProps) {
-    const [descriptionStart, setDescriptionStart] = useState(false);
+  const [descriptionStart, setDescriptionStart] = useState(false);
 
-    //title Typewriter
-    const { displayedText: titleText, setShouldStart: setTitleStart } =
-      useEncryptingTypewriter(title, 50, 3500, 1, "full");
+  //title Typewriter
+  const { displayedText: titleText, setShouldStart: setTitleStart } =
+    useEncryptingTypewriter(title, 50, 3500);
 
-    //description Typewriter
-    const { displayedText: descriptionText, setShouldStart: setDescriptionStartTyper } =
-      useTypewriter(description, 15, 4000);
+  //description Typewriter
+  const {
+    displayedText: descriptionText,
+    setShouldStart: setDescriptionStartTyper,
+  } = useTypewriter(description, 15, 4000);
 
-    // Wenn die Description anfängt Zeichen zu haben, setze descriptionStart
-    useEffect(() => {
-      if (descriptionText.length > 0 && !descriptionStart) {
-        setDescriptionStart(true);
-      }
-    }, [descriptionText, descriptionStart]);
+  // Wenn die Description anfängt Zeichen zu haben, setze descriptionStart
+  useEffect(() => {
+    if (descriptionText.length > 0 && !descriptionStart) {
+      setDescriptionStart(true);
+    }
+  }, [descriptionText, descriptionStart]);
 
   return (
     <motion.div
@@ -44,19 +46,19 @@ export default function WorkProjectCard({
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="border border-border rounded-lg overflow-hidden transition-all duration-300 bg-card/50 group"
       onAnimationComplete={() => {
-        setTitleStart(true)
-        setDescriptionStartTyper(true)
+        setTitleStart(true);
+        setDescriptionStartTyper(true);
       }}
     >
       {/* Gradient Image Section */}
-      <div className={`h-24 bg-gradient-to-br ${gradient} relative overflow-hidden`} />
+      <div
+        className={`h-24 bg-gradient-to-br ${gradient} relative overflow-hidden`}
+      />
 
       {/* Content Section */}
       <div className="p-4 space-y-3">
         <h3 className="text-xl font-semibold min-h-[2.5em]">{titleText}</h3>
-        <p 
-          className="text-muted-foreground text-sm leading-relaxed min-h-[5em]"
-        >
+        <p className="text-muted-foreground text-sm leading-relaxed min-h-[5em]">
           {descriptionText}
         </p>
 
