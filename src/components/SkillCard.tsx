@@ -22,7 +22,7 @@ export default function SkillCard({
   isInView = true,
 }: SkillCardProps) {
     //title typewriter
-    const { displayedText: titleText, setShouldStart: setTitleStart } = useEncryptingTypewriter(title, 50, 500, );
+    const { displayedText: titleText, setShouldStart: setTitleStart } = useEncryptingTypewriter(title, 50, 2750, );
 
   return (
     <motion.div
