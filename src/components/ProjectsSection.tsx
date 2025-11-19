@@ -12,7 +12,7 @@ export default function ProjectsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-300px" });
   const { projects } = content;
-  //TITLE
+  //title Typewriter
   const { displayedText: titleText, setShouldStart: setTitleStart } =
     useEncryptingTypewriter(projects.title, 50, 500);
 
