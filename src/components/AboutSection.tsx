@@ -36,7 +36,7 @@ export default function AboutSection() {
   );
 
   return (
-    <section id="about" className="py-32" ref={ref}>
+    <section id="about" className="py-80" ref={ref}>
       <div className="container mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

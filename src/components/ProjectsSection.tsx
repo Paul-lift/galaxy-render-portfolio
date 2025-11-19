@@ -21,7 +21,7 @@ export default function ProjectsSection() {
     useTypewriter(projects.description, 15, 2000);
 
   return (
-    <section id="projects" className="py-64" ref={ref}>
+    <section id="projects" className="py-80" ref={ref}>
       <div className="container mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
