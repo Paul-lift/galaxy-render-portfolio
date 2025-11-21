@@ -2,7 +2,7 @@
   "hero": {
     "badge": "Informatiker im 2. Lehrjahr",
     "name": "Paul",
-    "tagline": "Engineering my own universe",
+    "tagline": "Lerne mich kennen!",
     "cta": {
       "primary": "Meine Projekte anschauen"
     },
@@ -14,25 +14,25 @@
   },
   "about": {
     "title": "Über Mich",
-    "description": "Ich bin ein Software-Engineering-Lehrling basierend in der Schweiz, der technische Fähigkeiten mit kreativer Vision verbindet, um einzigartige digitale Erfahrungen zu schaffen.",
+    "description": "Ich bin Paul, Informatiker-Lernender im 2. Lehrjahr, der neugierig bleibt, viel ausprobiert und Dinge erschafft, die zu mir passen.",
     "features": [
       {
-        "icon": "Code2",
-        "title": "Sauberer Code",
-        "description": "Schreiben von wartbarem, skalierbarem Code mit modernen Best Practices und eleganten Lösungen."
+        "icon": "PersonStanding",
+        "title": "Ich als Person",
+        "description": "Ich bin jemand. der gerne hinterfragt, neugierig bleibt und lieber versteht, statt nur zu machen"
       },
       {
-        "icon": "Palette",
-        "title": "Kreatives Design",
-        "description": "Verbindung von technischer Expertise mit künstlerischer Vision, um atemberaubende visuelle Erfahrungen zu schaffen."
+        "icon": "Dumbbell",
+        "title": "Hobbys",
+        "description": "Gym, Schlagzeug, Lesen und Programmieren, alles was Energie gibt und mich kurz aus dem Kopf holt."
       },
       {
-        "icon": "Rocket",
-        "title": "Innovation",
-        "description": "Ständige Erkundung neuer Technologien und das Überschreiten von Grenzen der Möglichkeiten."
+        "icon": "Flower",
+        "title": "Werte",
+        "description": "Mir sind Ehrlichkeit, Respekt, Guter Humor und kontinuierliches Lernen wichtig, weil sie mich motivieren, als Mensch weiterzuwachsen"
       }
     ],
-    "bio": "Wenn ich nicht gerade code, experimentiere ich mit Shader-Programmierung, erkunde die neuesten Entwicklungen in WebGL und Three.js oder verliere mich im Kosmos der kreativen Möglichkeiten, die die Technologie bietet. Mein Ziel ist es, technische Präzision mit künstlerischem Ausdruck zu verbinden, um Erfahrungen zu schaffen, die inspirieren."
+    "bio": "Schon als Kind hat mich fasziniert, wie Geräte und Anwendungen funktionieren. Später habe ich zu Hause erste Programme geschrieben und gemerkt, wie sehr mich das kreative Bauen reizt. Beim Schnuppern wurde mir dann klar, dass ich Informatiker werden will. Heute ist es mein Ziel, ein tiefes Verständnis fürs Programmieren zu entwickeln, verschiedene Technologien wirklich zu beherrschen und meinen Teil dazu beizutragen, die Swisscom in eine Digitale Zukunft zu führen."
   },
   "projects": {
     "title": "Projekte in der Swisscom",
@@ -42,24 +42,18 @@
         "title": "Galaxy Shader Explorer",
         "description": "Interaktiver WebGL-Shader-Spielplatz zum Erstellen und Experimentieren mit prozeduralen Galaxie-Effekten in Echtzeit.",
         "tags": ["Three.js", "GLSL", "React"],
-        "github": "https://github.com",
-        "demo": "https://example.com",
         "gradient": "from-purple-500/20 to-blue-500/20"
       },
       {
         "title": "Cosmic Portfolio",
         "description": "Diese Website - ein futuristisches Portfolio mit 3D-Grafiken, Partikelsystemen und sanften Animationen.",
         "tags": ["React Three Fiber", "Framer Motion", "TypeScript"],
-        "github": "https://github.com",
-        "demo": "https://example.com",
         "gradient": "from-blue-500/20 to-pink-500/20"
       },
       {
         "title": "Neural Network Visualizer",
         "description": "Echtzeit-3D-Visualisierung von Trainingsprozessen neuronaler Netzwerke mit interaktiven Steuerelementen und Datenfluss-Animationen.",
         "tags": ["WebGL", "TensorFlow.js", "D3.js"],
-        "github": "https://github.com",
-        "demo": "https://example.com",
         "gradient": "from-pink-500/20 to-purple-500/20"
       }
     ]

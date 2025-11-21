@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code2, Palette, Rocket } from "lucide-react";
+import { Code2, Palette, Rocket, PersonStanding, Dumbbell, Flower } from "lucide-react";
 import content from "@/data/content.json";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import BlinkingCursor from "./ui/blinkingCursor";
@@ -12,6 +12,9 @@ const iconMap = {
   Code2: Code2,
   Palette: Palette,
   Rocket: Rocket,
+  PersonStanding: PersonStanding,
+  Dumbbell: Dumbbell,
+  Flower: Flower,
 };
 
 export default function AboutSection() {
